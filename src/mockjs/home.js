@@ -29,7 +29,7 @@ let topSwipeImg = Mock.mock({
 Mock.mock(/newjiuxian\/topSwipeImg/, 'get', () => { //三个参数。第一个路径，第二个请求方式post/get，第三个回调，返回值
     return topSwipeImg
 })
-
+// 搜索热词列表
 let hotList = Mock.mock({
     "data|20": [ //生成多少条数据 数组
         {
@@ -43,7 +43,7 @@ let hotList = Mock.mock({
 Mock.mock(/newjiuxian\/hotList/, 'get', () => { //三个参数。第一个路径，第二个请求方式post/get，第三个回调，返回值
     return hotList
 })
-
+// 搜索下拉列表
 let seachList = Mock.mock({
     "data|10": [ //生成多少条数据 数组
         {
@@ -54,7 +54,7 @@ let seachList = Mock.mock({
 Mock.mock(/newjiuxian\/seachList/, 'post', () => { //三个参数。第一个路径，第二个请求方式post/get，第三个回调，返回值
     return seachList
 })
-
+// 判断验证码
 let phoneYzm = Mock.mock({
     "data|1": [ //生成多少条数据 数组
         {
@@ -66,6 +66,7 @@ Mock.mock(/newjiuxian\/phoneYzm/, 'post', () => { //三个参数。第一个路�
     return phoneYzm
 })
 
+// 验证名字是否是0
 let userName = Mock.mock({
     "data|1": [ //生成多少条数据 数组
         {
@@ -77,6 +78,7 @@ Mock.mock(/newjiuxian\/userNameID/, 'post', () => { //三个参数。第一个�
     return userName
 })
 
+// 提交登录
 let userLogin = Mock.mock({
     "data|1": [ //生成多少条数据 数组
         {
@@ -87,5 +89,17 @@ let userLogin = Mock.mock({
 })
 Mock.mock(/newjiuxian\/userLogin/, 'post', () => { //三个参数。第一个路径，第二个请求方式post/get，第三个回调，返回值
     return userLogin
+})
+
+// 头条新闻
+let newLists = Mock.mock({
+    "data|5": [ //生成多少条数据 数组
+        {
+            "newList":"@ctitle(8)",
+        }
+    ]
+})
+Mock.mock(/newjiuxian\/newLists/, 'get', () => { //三个参数。第一个路径，第二个请求方式post/get，第三个回调，返回值
+    return newLists
 })
 
