@@ -65,3 +65,27 @@ let phoneYzm = Mock.mock({
 Mock.mock(/newjiuxian\/phoneYzm/, 'post', () => { //三个参数。第一个路径，第二个请求方式post/get，第三个回调，返回值
     return phoneYzm
 })
+
+let userName = Mock.mock({
+    "data|1": [ //生成多少条数据 数组
+        {
+            "userName": 0
+        }
+    ]
+})
+Mock.mock(/newjiuxian\/userNameID/, 'post', () => { //三个参数。第一个路径，第二个请求方式post/get，第三个回调，返回值
+    return userName
+})
+
+let userLogin = Mock.mock({
+    "data|1": [ //生成多少条数据 数组
+        {
+            "userName":'liangzhen',
+            "userPass":'123456'
+        }
+    ]
+})
+Mock.mock(/newjiuxian\/userLogin/, 'post', () => { //三个参数。第一个路径，第二个请求方式post/get，第三个回调，返回值
+    return userLogin
+})
+

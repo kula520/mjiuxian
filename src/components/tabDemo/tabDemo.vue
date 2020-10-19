@@ -18,8 +18,8 @@ import loginPhone from './tabLogin/loginPhone'
 export default {
   data () {
     return {
-      currentComp: 'loginPhone',
-      isActive: '2',
+      currentComp: 'loginUser',
+      isActive: '1',
       menu: [
         {
           name: '账号登录',

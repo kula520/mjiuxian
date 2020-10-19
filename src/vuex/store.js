@@ -20,7 +20,21 @@ state: () => ({
     timeout: null,
     error:'验证码错误！',
     isYzmFalse:false,
-    isYzmTrue:false
+    isYzmTrue:false,
+    // 用户登录
+    userData:{
+        userTitle:'用户名/邮箱/手机号',
+        userName:'',
+        isUserName:false,
+        userNameerror:'用户名错误！',
+        userPass:'',
+        isUserPass:false,
+        userPasserror:'密码错误!',
+        userYzmT:false,
+        userYzmF:false,
+        userYzm:'',
+        yzmTrue:false
+    }
 }),
 mutations: { 
     increment (state) {
