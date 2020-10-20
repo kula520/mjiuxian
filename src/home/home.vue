@@ -17,6 +17,7 @@
                 </div>
             </div>
         </div>
+        <seckillList></seckillList>
     </div>
 </template>
 <script>
@@ -26,6 +27,7 @@ import '../mockjs/home'
 import swipeImg from '../components/swipe/swipe'
 import topApp from '../components/topApp/topApp'
 import seach from '../home/components/seach'
+import seckillList from './components/seckill'
 export default {
     name:'home',
     data(){
@@ -62,7 +64,8 @@ export default {
     components:{
         swipeImg,
         topApp,
-        seach
+        seach,
+        seckillList
     }
 }
 </script>

@@ -103,3 +103,17 @@ Mock.mock(/newjiuxian\/newLists/, 'get', () => { //三个参数。第一个路�
     return newLists
 })
 
+// 秒杀商品列表a
+let shopList = Mock.mock({
+    "data|10": [ //生成多少条数据 数组
+        {
+            "shopImg":Random.dataImage('110x110', '商品图'),
+            "shopTil":"@ctitle(18)",
+            "price|1-1000": 1000
+        }
+    ]
+})
+Mock.mock(/newjiuxian\/shopLists/, 'get', () => { //三个参数。第一个路径，第二个请求方式post/get，第三个回调，返回值
+    return shopList
+})
+
