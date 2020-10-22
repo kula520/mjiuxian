@@ -5,7 +5,7 @@
                 <li v-for="item in shopListData">
                     <div class='tab-item'><img :src="item.shopImg">
                         <p class="title">{{item.shopTil}}</p>
-                        <p><span class="price">{{item.price}}</span><br><s>{{item.price}}</s></p>
+                        <p><span class="price">¥{{item.price}}</span><br><s>¥{{item.price}}</s></p>
                     </div>
                 </li>
             </ul>

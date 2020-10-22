@@ -2,7 +2,7 @@
     <div class="seckillBD">
         <div class="seckillTil">
             <h4>掌上秒杀</h4>
-            <div class="seckill fl">
+            <div class="seckill fl" v-show="timeOver">
                 <span class="rf moreIcon">更多商品等您来抢！</span>
                 <span>距结束：</span>
                 <span class="timeBj">{{day}}</span>:
@@ -25,13 +25,14 @@ export default {
             second: '',
             promiseTimer: '',
             scrollList:[],
-            endTime:'2020-10-21 20:10:00',
+            endTime:'2020-10-25 20:10:00',
             time : '',
             flag : false,
             day:'',
             hour:'',
             min:'',
-            sed:''
+            sed:'',
+            timeOver:true
         }
     },
     components:{
@@ -56,6 +57,7 @@ export default {
             this.sed = this.formate(parseInt(leftTime%60))
             if(leftTime <= 0){
                 this.flag = true
+                this.timeOver = false
             }
         },
         formate (time) {

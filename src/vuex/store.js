@@ -34,7 +34,12 @@ state: () => ({
         userYzmF:false,
         userYzm:'',
         yzmTrue:false
-    }
+    },
+    //热门推荐    
+    fixdListLDatas:[],
+    fixdListRDatas:[],
+    upLoading:true,
+    page:1
 }),
 mutations: { 
     increment (state) {

@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div class="mb40">
         <topApp v-on:classStyle="childValue"></topApp>    
         <seach :class="{'active':isActive}">></seach>
         <swipeImg></swipeImg>   
@@ -18,6 +18,8 @@
             </div>
         </div>
         <seckillList></seckillList>
+        <div class="hotShopTil">爆款推荐</div>
+        <fixdScoll></fixdScoll>
     </div>
 </template>
 <script>
@@ -28,6 +30,7 @@ import swipeImg from '../components/swipe/swipe'
 import topApp from '../components/topApp/topApp'
 import seach from '../home/components/seach'
 import seckillList from './components/seckill'
+import fixdScoll from './components/fixdScoll'
 export default {
     name:'home',
     data(){
@@ -65,11 +68,13 @@ export default {
         swipeImg,
         topApp,
         seach,
-        seckillList
+        seckillList,
+        fixdScoll
     }
 }
 </script>
 <style scoped>
+.mb40{margin-bottom:40px;}
 .navListsbd{position:fixed;bottom:0;left:0;height:40px;background:#f1f1f1;width:100%;border-top:1px solid #ccc;}
 .navListsbd li{width:20%;display:inline-block;height:40px;line-height:40px;text-align:center;}
 .navListsbd li img{width:50%;height:auto;vertical-align: middle;}
@@ -79,4 +84,5 @@ export default {
 #hLinesBox{overflow: hidden;}
 #hLinesBox .anim{transition: all 0.5s;margin-top: -18px;}
 #hLinesBox  #linesList li{list-style: none;line-height: 18px;height: 18px;}
+.hotShopTil{text-align:center;font-size:14px;padding:10px;border-bottom:1px solid #ccc;background:#f1f1f1;font-weight:bold;}
 </style>
