@@ -18,6 +18,11 @@
             </div>
         </div>
         <seckillList></seckillList>
+        <bannerLists></bannerLists>
+        <specialPage :specialObj='specialObjData'></specialPage>
+        <specialPage :specialObj='specialObjData1'></specialPage>
+        <specialPage :specialObj='specialObjData2'></specialPage>
+        <specialPage :specialObj='specialObjData3'></specialPage>
         <div class="hotShopTil">爆款推荐</div>
         <fixdScoll></fixdScoll>
     </div>
@@ -31,13 +36,84 @@ import topApp from '../components/topApp/topApp'
 import seach from '../home/components/seach'
 import seckillList from './components/seckill'
 import fixdScoll from './components/fixdScoll'
+import bannerLists from './components/bannerList'
+import specialPage from './components/specialPage'
+
 export default {
     name:'home',
     data(){
         return {
             isActive:false,
             animate:false,
-            items:[]
+            items:[],
+            specialObjData:{
+                spTitle:'中国白酒馆',                
+                imgL:require('../assets/spBanner/1.jpg'),
+                imgLurl:'https://m.jiuxian.com/mobile/2020/MT/index.html',
+                imgRT:require('../assets/spBanner/2.jpg'),
+                imgRTurl:'https://m.jiuxian.com/m_v1/dynamic/mob01/151784',
+                imgBList:[
+                    {
+                        imgB:require('../assets/spBanner/3.jpg'),
+                        imgBurl:'https://m.jiuxian.com/m_v1/dynamic/mob01/151820'
+                    },
+                    {
+                        imgB:require('../assets/spBanner/4.jpg'),
+                        imgBurl:'https://m.jiuxian.com/m_v1/dynamic/mob01/151802'
+                    }
+                ]
+            },
+            specialObjData1:{
+                spTitle:'世界洋酒馆',                
+                imgL:require('../assets/spBanner/1.jpg'),
+                imgLurl:'https://m.jiuxian.com/mobile/2020/MT/index.html',
+                imgRT:require('../assets/spBanner/2.jpg'),
+                imgRTurl:'https://m.jiuxian.com/m_v1/dynamic/mob01/151784',
+                imgBList:[
+                    {
+                        imgB:require('../assets/spBanner/3.jpg'),
+                        imgBurl:'https://m.jiuxian.com/m_v1/dynamic/mob01/151820'
+                    },
+                    {
+                        imgB:require('../assets/spBanner/4.jpg'),
+                        imgBurl:'https://m.jiuxian.com/m_v1/dynamic/mob01/151802'
+                    }
+                ]
+            },
+            specialObjData2:{
+                spTitle:'小资葡萄酒馆',                
+                imgL:require('../assets/spBanner/1.jpg'),
+                imgLurl:'https://m.jiuxian.com/mobile/2020/MT/index.html',
+                imgRT:require('../assets/spBanner/2.jpg'),
+                imgRTurl:'https://m.jiuxian.com/m_v1/dynamic/mob01/151784',
+                imgBList:[
+                    {
+                        imgB:require('../assets/spBanner/3.jpg'),
+                        imgBurl:'https://m.jiuxian.com/m_v1/dynamic/mob01/151820'
+                    },
+                    {
+                        imgB:require('../assets/spBanner/4.jpg'),
+                        imgBurl:'https://m.jiuxian.com/m_v1/dynamic/mob01/151802'
+                    }
+                ]
+            },
+            specialObjData3:{
+                spTitle:'啤酒综合馆',                
+                imgL:require('../assets/spBanner/1.jpg'),
+                imgLurl:'https://m.jiuxian.com/mobile/2020/MT/index.html',
+                imgRT:require('../assets/spBanner/2.jpg'),
+                imgRTurl:'https://m.jiuxian.com/m_v1/dynamic/mob01/151784',
+                imgBList:[
+                    {
+                        imgB:require('../assets/spBanner/3.jpg'),
+                        imgBurl:'https://m.jiuxian.com/m_v1/dynamic/mob01/151820'
+                    },
+                    {
+                        imgB:require('../assets/spBanner/4.jpg'),
+                        imgBurl:'https://m.jiuxian.com/m_v1/dynamic/mob01/151802'
+                    }
+                ]
+            }
         }
     },
     created(){  
@@ -69,7 +145,9 @@ export default {
         topApp,
         seach,
         seckillList,
-        fixdScoll
+        fixdScoll,
+        bannerLists,
+        specialPage
     }
 }
 </script>

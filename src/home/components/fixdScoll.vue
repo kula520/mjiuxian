@@ -4,7 +4,7 @@
             <div class="sigFix lf mr5">
                 <ul>
                     <li v-for="item in $store.state.home.fixdListLDatas">
-                        <img :src="item.shopImg">
+                        <img v-lazy="item.shopImg">
                         <p>{{item.shopTil}}</p>          
                         <p><span>¥{{item.price}}</span></p>
                     </li>
@@ -13,7 +13,7 @@
             <div class="sigFix rf">
                 <ul>
                     <li v-for="item in $store.state.home.fixdListRDatas">
-                        <img :src="item.shopImg">
+                        <img v-lazy="item.shopImg">
                         <p>{{item.shopTil}}</p>                        
                         <p><span>¥{{item.price}}</span></p>
                     </li>
@@ -27,6 +27,7 @@
 <script>
 import axios from "axios"
 import '../../mockjs/home'
+import { Lazyload } from 'mint-ui';
 export default {
     name:'fixdScoll',
     data(){
@@ -88,10 +89,26 @@ export default {
                  that.loadMore();
             }
         }
+    },
+    lazyload: {
+        preLoad: 1.3,
+        //表示出错时显示的图片
+        error: 'dist/error.png',
+        //表示未加载之前显示的图片
+        loading: 'dist/loading.gif',
+        attempt: 1,
+        filter: {
+        webp(listener, options) {
+        },
+        },
     }
 }
 </script>
 <style scoped>
+img[lazy=loading] {
+  width: 100%;
+  height: auto;
+}
 .fixdScollbd{width:100%;}
 .sigFix{width:49.1%;}
 .sigFix.mr5{margin-right:5px;}

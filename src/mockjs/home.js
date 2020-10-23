@@ -131,3 +131,15 @@ Mock.mock(/newjiuxian\/fixdScollLists/, 'get', () => { //三个参数。第一�
     return fixdScollList
 })
 
+// bannerLists 
+let bannerImgLists = Mock.mock({
+    "data|5": [ //生成多少条数据 数组
+        {
+            "bannerImg":Random.dataImage('700x170', '商品图')
+        }
+    ]
+})
+Mock.mock(/newjiuxian\/bannerLists/, 'get', () => { //三个参数。第一个路径，第二个请求方式post/get，第三个回调，返回值
+    return bannerImgLists
+})
+
