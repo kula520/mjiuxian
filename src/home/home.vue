@@ -5,7 +5,7 @@
         <swipeImg></swipeImg>   
         <div class="navListsbd">
             <ul>
-                <li v-for="(navs,index) in this.$store.state.home.navLists" :key='index'><router-link tag="a" :to='{name:navs.url}' :title='navs.name'><img :src='navs.newsImage'></router-link></li>
+                <li v-for="(navs,index) in this.$store.state.home.navLists" :key='index' @click="navClickHandle(navs.id,navs.name)"><router-link tag="a" :to='{name:navs.url}' :title='navs.name'><img :src='navs.newsImage'></router-link></li>
             </ul>
         </div>
         <div class="hLines"><strong>酒仙头条</strong>
@@ -130,6 +130,12 @@ export default {
                 this.items.shift();               
                 this.animate = false;  
             },500)
+        },
+        navClickHandle(key,val) {
+            //获取本地缓存数据---sessionStorage 关闭窗口删除数据 localStorage 永久保存清除缓存才会清除数据
+            this.$store.state.sort.topTitle = val
+            var storage = window.sessionStorage;  
+                storage.setItem('title', val); 
         }
     },
     mounted () {

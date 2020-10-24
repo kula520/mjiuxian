@@ -58,7 +58,14 @@ getters: {
     
     }
 }
-
+//分类
+const sortData = {
+    state: () => ({ 
+        topTitle:'',
+        key:''
+    })
+}
+//登录
 const loginData = {
     state: () => ({ 
         
@@ -68,6 +75,7 @@ const loginData = {
 export default new Vuex.Store({
     modules:{
         home:homeData,
-        logon:loginData
+        logon:loginData,
+        sort:sortData
     }
 })

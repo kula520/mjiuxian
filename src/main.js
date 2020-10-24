@@ -4,7 +4,6 @@ import Vue from 'vue'
 import App from './App'
 import router from './router'
 import store from './vuex/store'
-
 import axios from 'axios'
 
 import MintUI from 'mint-ui'
@@ -34,6 +33,8 @@ axios.interceptors.response.use(
 
 Vue.config.productionTip = false
 
+
+Vue.prototype.bus = new Vue();
 
 /* eslint-disable no-new */
 new Vue({

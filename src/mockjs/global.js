@@ -13,7 +13,7 @@ let navLists = Mock.mock({
         {
             'id':2,
             'name':'分类',
-            'url':'',
+            'url':'sort',
             'newsImage':require('../assets/navs/sortIcon.png')
         },
         {
@@ -67,4 +67,86 @@ let topSwipeImg = Mock.mock({
 })
 Mock.mock(/mjiuxian\/swipeImg/, 'get', () => { //三个参数。第一个路径，第二个请求方式post/get，第三个回调，返回值
     return topSwipeImg
+})
+
+//sort 分裂数据
+let sortLists = Mock.mock({
+    "data":[
+        {
+            'id':1,
+            'claSty':'claSty',
+            'name':'白酒',
+            'url':'https://m.jiuxian.com/'
+        },
+        {
+            'id':2,
+            'claSty':'claSty',
+            'name':'葡萄酒',
+            'url':'https://m.jiuxian.com/'
+        },
+        {
+            'id':3,
+            'claSty':'claSty',
+            'name':'洋酒',
+            'url':'https://m.jiuxian.com/'
+        },
+        {
+            'id':4,
+            'claSty':'claSty',
+            'name':'整箱购',
+            'url':'https://m.jiuxian.com/'
+        },
+        {
+            'id':5,
+            'claSty':'claSty',
+            'name':'老酒',
+            'url':'https://m.jiuxian.com/'
+        },
+        {
+            'id':6,
+            'claSty':'claSty',
+            'name':'清仓特卖',
+            'url':'https://m.jiuxian.com/'
+        },
+        {
+            'id':7,
+            'claSty':'claSty',
+            'name':'海外直采',
+            'url':'https://m.jiuxian.com/'
+        },
+        {
+            'id':8,
+            'claSty':'claSty',
+            'name':'精美大坛',
+            'url':'https://m.jiuxian.com/'
+        },
+        {
+            'id':9,
+            'claSty':'claSty',
+            'name':'红酒整箱',
+            'url':'https://m.jiuxian.com/'
+        },
+        {
+            'id':10,
+            'claSty':'claSty',
+            'name':'值得买',
+            'url':'https://m.jiuxian.com/'
+        },
+        {
+            'id':11,
+            'claSty':'claSty',
+            'name':'销量排行',
+            'url':'https://m.jiuxian.com/'
+        },
+        {
+            'id':12,
+            'claSty':'claSty',
+            'name':'礼尚往来',
+            'url':'https://m.jiuxian.com/'
+        }
+        
+    ]
+})
+Mock.mock(/mjiuxian\/sortLists/, 'get', () => { //三个参数。第一个路径，第二个请求方式post/get，第三个回调，返回值
+    return sortLists
 })

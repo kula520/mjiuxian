@@ -5,8 +5,7 @@
             <div class="sechipt">
                 <mt-button type="default" class="popBtn" @click.native="handleClick"></mt-button>
                 <input class="inputTxt" type="text" placeholder='国窖茅台' disabled>
-            </div>
-            
+            </div>            
         </div>
         <mt-popup v-model="popupVisible" :modal='true' position="right" closeOnClickModal='true'>
             <div class="popUpTop">
