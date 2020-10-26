@@ -3,6 +3,7 @@ import Router from 'vue-router'
 import Home from '../home/home.vue'
 import Login from '../login/login'
 import Sort from '../sortPage/sort'
+import userIndex from '../user/userIndex.vue'
 Vue.use(Router)
 
 export default new Router({
@@ -10,7 +11,10 @@ export default new Router({
     {
       path: '/',
       name: 'home',
-      component: Home
+      component: Home,
+      meta:{
+        keepAlive:true
+      }
     },
     {
       path: '/login',
@@ -21,6 +25,11 @@ export default new Router({
       path:'/sortPage',
       name:'sort',
       component:Sort
+    },
+    {
+      path:'/user',
+      name:'userIndex',
+      component:userIndex
     }
   ]
 })

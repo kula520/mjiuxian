@@ -6,7 +6,7 @@ export default {
     name:'topNav',
     props:['title'],
     methods:{
-        prev(){
+        prev(){            
             this.$router.go(-1)
         }
     }

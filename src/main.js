@@ -9,6 +9,20 @@ import axios from 'axios'
 import MintUI from 'mint-ui'
 import 'mint-ui/lib/style.css'
 
+// 页面返回后回到页面顶部
+router.beforeEach((to, from, next) => {
+  // 让页面回到顶部
+  // chrome
+  document.body.scrollTop = 0;
+  // firefox
+  document.documentElement.scrollTop = 0;
+  // safari
+  window.pageYOffset = 0;
+  // 调用 next()，一定要调用 next 方法，否则钩子就不会被销毁
+  next()
+})
+  
+  
 Vue.use(MintUI)
 
 Vue.prototype.$axios = axios;

@@ -155,9 +155,17 @@ export default {
                 let userNewN = res.data.data.userName
                 let userNewP = res.data.data.userPass
                 if(data.userN == userNewN && data.userP == userNewP && this.$store.state.home.userData.yzmTrue == true){
-                    console.log('登录成功')       
+                    // "userName":'liangzhen',
+                    // "userPass":'123456'   
+                    this.$store.state.sort.topTitle = '个人中心'
+                    var storage = window.sessionStorage;  
+                        storage.setItem('title', '个人中心');
+                        storage.setItem('userLogin','true');   
+                        this.$router.push({name:'userIndex'});
                 } else {
-                    console.log('用户名密码不匹配')     
+                    console.log('用户名密码不匹配') 
+                    var storage = window.sessionStorage;                     
+                    storage.setItem('userLogin','false');   
                 }
             })
         }

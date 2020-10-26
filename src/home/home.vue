@@ -133,9 +133,16 @@ export default {
         },
         navClickHandle(key,val) {
             //获取本地缓存数据---sessionStorage 关闭窗口删除数据 localStorage 永久保存清除缓存才会清除数据
-            this.$store.state.sort.topTitle = val
             var storage = window.sessionStorage;  
-                storage.setItem('title', val); 
+            if(storage.userLogin == 'true' && key == 5){    
+                storage.setItem('title', '个人中心');                
+                storage.setItem('key', '5'); 
+                this.$router.push({name:'userIndex'});
+            }else{
+                this.$store.state.sort.topTitle = val
+                var storage = window.sessionStorage;  
+                    storage.setItem('title', val); 
+            }
         }
     },
     mounted () {
